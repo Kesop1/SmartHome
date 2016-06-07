@@ -1,0 +1,575 @@
+------------------ITEMS----------------------
+
+Group All
+
+Group duzy_pokoj (All)
+Group maly_pokoj (All)
+Group kuchnia    (All)
+Group korytarz   (All)
+Group kibel      (All)
+Group balkon     (All)
+Group wylacznik  (All)
+Group budzik     (All)
+Group tv         (All)
+
+Number          k_czuj_1        "Czujnik ruchu [MAP(motion.map):%s]"            <shield>        (korytarz)      {mqtt="<[broker:czuj/k/1:state:default]" }
+
+Switch          m_lis_1         "Monitor"                                       <monitor>       (maly_pokoj)    {mqtt=">[broker:lis/m/1:command:off:OFF],>[broker:lis/m/1:command:on:ON],<[broker:m_lis_1/status:state:default]"}
+
+Switch          m_lis_2         "Komputer"                                      <pc>            (maly_pokoj)    {mqtt=">[broker:lis/m/2:command:off:OFF],>[broker:lis/m/2:command:on:ON],<[broker:m_lis_2/status:state:default]"}
+
+Switch          m_lis_3         "Laptop"                                        <laptop>        (maly_pokoj)    {mqtt=">[broker:lis/m/3:command:off:OFF],>[broker:lis/m/3:command:on:ON],<[broker:m_lis_3/status:state:default]"}
+
+Switch          m_lis_4         "Glosniki"                                      <speakers>      (maly_pokoj)    {mqtt=">[broker:lis/m/4:command:off:OFF],>[broker:lis/m/4:command:on:ON],<[broker:m_lis_4/status:state:default]"}
+
+Switch          m_lis_5         "Swiatlo"                                       <switch>        (maly_pokoj)    {mqtt=">[broker:lis/m/5:command:off:OFF],>[broker:lis/m/5:command:on:ON],<[broker:m_lis_5/status:state:default]"}
+
+Number          czuj_temp       "Temperatura [%s °C]"                            <temperature>   (duzy_pokoj)    {mqtt="<[broker:czuj/d/1/temp:state:default]"}
+
+Number          czuj_wilg       "Wilgotnosc [%s %%]"                            <water>         (duzy_pokoj)    {mqtt="<[broker:czuj/d/1/wilg:state:default]"}
+
+Switch          d_lis_1         "Sub-woofer"                                    <speakers>      (duzy_pokoj)    {mqtt=">[broker:lis/d/1:command:off:OFF],>[broker:lis/d/1:command:on:ON],<[broker:d_lis_1/status:state:default]"}
+
+Switch          d_lis_2         "Listwa 2"                                      <socket>        (duzy_pokoj)    {mqtt=">[broker:lis/d/2:command:off:OFF],>[broker:lis/d/2:command:on:ON],<[broker:d_lis_2/status:state:default]"}
+
+Switch          d_lis_3         "Listwa 3"                                      <socket>        (duzy_pokoj)    {mqtt=">[broker:lis/d/3:command:off:OFF],>[broker:lis/d/3:command:on:ON],<[broker:d_lis_3/status:state:default]"}
+
+Switch          d_lis_4         "Listwa 4"                                      <socket>        (duzy_pokoj)    {mqtt=">[broker:lis/d/4:command:off:OFF],>[broker:lis/d/4:command:on:ON],<[broker:d_lis_4/status:state:default]"}
+
+Switch          d_lis_5         "Ladowarka"                                     <charger>       (duzy_pokoj)    {mqtt=">[broker:lis/d/5:command:off:OFF],>[broker:lis/d/5:command:on:ON],<[broker:d_lis_5/status:state:default]"}
+
+Switch          d_lis_6         "Amplituner"                                    <speakers>      (duzy_pokoj)    {mqtt=">[broker:lis/d/6:command:off:OFF],>[broker:lis/d/6:command:on:ON],<[broker:d_lis_6/status:state:default]"}
+
+Switch          d_lis_7         "TV"                                            <tv>            (duzy_pokoj)    {mqtt=">[broker:lis/d/7:command:off:OFF],>[broker:lis/d/7:command:on:ON],<[broker:d_lis_7/status:state:default]"}
+
+Switch          d_lis_8         "PS3"                                           <ps3>           (duzy_pokoj)    {mqtt=">[broker:lis/d/8:command:off:OFF],>[broker:lis/d/8:command:on:ON],<[broker:d_lis_8/status:state:default]"}
+
+Switch          d_lis_9         "DVB-T"                                         <dvb>           (duzy_pokoj)    {mqtt=">[broker:lis/d/9:command:off:OFF],>[broker:lis/d/9:command:on:ON],<[broker:d_lis_9/status:state:default]"}
+
+Switch          d_lis_10        "Antena"                                        <socket>        (duzy_pokoj)    {mqtt=">[broker:lis/d/10:command:off:OFF],>[broker:lis/d/10:command:on:ON],<[broker:d_lis_10/status:state:default]"}
+
+Number          czuj_temp1      "Temperatura [%s °C]"                           <temperature>   (balkon)        {mqtt="<[broker:czuj/b/1/temp:state:default]"}
+
+Number          czuj_wilg1      "Wilgotnosc [%s %%]"                            <water>         (balkon)        {mqtt="<[broker:czuj/b/1/wilg:state:default]"}
+
+Switch          d_io_1          "Swiatlo"                                       <switch>        (duzy_pokoj)    {mqtt=">[broker:io/d:command:off:OFF],>[broker:io/d:command:on:ON],<[broker:d_io_1/status:state:default]"}
+
+Switch          k_io_1          "Swiatlo"                                       <switch>        (korytarz)      {mqtt=">[broker:io/k:command:off:OFF],>[broker:io/k:command:on:ON],<[broker:k_io_1/status:state:default]"}
+
+Switch          q_io_1          "Swiatlo"                                       <switch>        (kuchnia)       {mqtt=">[broker:io/q:command:off:OFF],>[broker:io/q:command:on:ON],<[broker:q_io_1/status:state:default]"}
+
+Number          czuj_swiatla    "Czujnik swiatla [%s]"                          <light>         (balkon)        {mqtt="<[broker:czuj/b/2:state:default]"}
+
+Switch          sen             "Idz spac"                                      <bedroom>                       {mqtt=">[broker:pilot:command:off:OFF]"}
+
+Number          magnet1         "Lodowka [MAP(lodowka.map):%s]"                 <shield>        (kuchnia)       {mqtt="<[broker:czuj/q/1:state:default]" }
+
+Number          magnet2         "Zamrazarka [MAP(lodowka.map):%s]"              <shield>        (kuchnia)       {mqtt="<[broker:czuj/q/2:state:default]" }
+
+DateTime        dataczas        "Data [%1$tT %1$tA, %1$td.%1$tm.%1$tY]"         <calendar>      (All)
+
+Number          wylgodz         "Godziny [%d]"                                  <clock>         (wylacznik)
+
+Number          wylmin          "Minuty [%d]"                                   <clock>         (wylacznik)
+
+Switch          ustawspanie     "Ustaw timer"                                   <bedroom>       (wylacznik)     {mqtt=">[broker:wylacznik:command:off:OFF],>[broker:wylacznik:command:on:ON],<[broker:wylacznik:state:default]"}
+
+Switch          pilot1          "AMP"                                           <speakers>      (tv)            {mqtt=">[broker:pilot/amp:command:off:OFF],>[broker:pilot/amp:command:on:ON],<[broker:pilot/amp/status:state:default]"}
+
+Switch          pilot2          "DVB-T"                                         <dvb>           (tv)            {mqtt=">[broker:pilot/dvb:command:off:OFF],>[broker:pilot/dvb:command:on:ON],<[broker:pilot/dvb/status:state:default]"}
+
+Switch          pilot3          "TV"                                            <tv>            (tv)            {mqtt=">[broker:pilot/tv:command:off:OFF],>[broker:pilot/tv:command:on:ON],<[broker:pilot/tv/status:state:default]"}
+
+Switch          spanie1         "AMP"                                           <speakers>      (wylacznik)
+
+Switch          spanie2         "DVB-T"                                         <dvb>           (wylacznik)
+
+Switch          spanie3         "TV"                                            <tv>            (wylacznik)
+
+Switch          spanie4         "Swiatlo"                                       <switch>        (wylacznik)
+
+Number          wlgodz          "Godziny [%d]"                                  <clock>         (budzik)
+
+Number          wlmin           "Minuty [%d]"                                   <clock>         (budzik)
+
+Switch          ustawbudzik     "Ustaw pobudke"                                 <bedroom>       (budzik)        {mqtt=">[broker:budzik:command:off:OFF],>[broker:budzik:command:on:ON],<[broker:budzik:state:default]"}
+
+//Switch          pobudka1        "AMP"                                           <speakers>      (budzik)
+
+//Switch          pobudka2        "DVB-T"                                         <dvb>           (budzik)
+
+//Switch          pobudka3        "TV"                                            <tv>            (budzik)
+
+Dimmer          pilotvol        "AMP Volume"                                    <volume>        (tv)            {mqtt=">[broker:pilot/amp:command:ON:UP],>[broker:pilot/amp:command:OFF:DN]"}
+
+Number          volume          "Volume [%s %%]"                                <volume>        (tv)            {mqtt=">[broker:pilot/amp:command:*:default]"}
+
+Number          volup                                                           <volup>                         {mqtt=">[broker:pilot/amp:command:*:default]"}
+
+Number          voldn                                                           <voldn>                         {mqtt=">[broker:pilot/amp:command:*:default]"}
+
+Number          scena                                                           <scena>                         {mqtt=">[broker:scena:command:*:default]"}
+
+Switch          wschod          "Wschod Slonca"                                 <sun>           (All)
+
+Switch          security        "Zlodziej w domu"                               <shield>        (All)
+
+----------------------------------SITEMAP------------------------------------------
+
+sitemap demo label="Chata"
+{
+
+Frame{
+Group item=duzy_pokoj label="Duzy pokoj" icon="sofa"
+Group item=maly_pokoj label="Maly pokoj" icon="room"
+Group item=kuchnia    label="Kuchnia"    icon="kitchen"
+Group item=korytarz   label="Korytarz"   icon="corridor"
+Group item=kibel      label="Latryna"    icon="bath"
+Group item=balkon     label="Balkon"     icon="garden"
+Group item=tv         label="TV"         icon="video"
+}
+
+
+
+Frame label="Korytarz" {
+Text item=k_czuj_1
+}
+
+Frame label="Data"{
+Text item=dataczas
+}
+
+Frame label="Wylacznik czasowy"{
+Text label="Wylacznik" icon="moon"{
+Frame label="Kiedy?" {
+Setpoint item=wylgodz minValue=0 maxValue=23 step=1
+Setpoint item=wylmin minValue=0 maxValue=55 step=5
+Switch item=ustawspanie
+}
+Frame label="Co wylaczyc?"{
+Switch item=spanie1
+Switch item=spanie2
+Switch item=spanie3
+Switch item=spanie4
+}
+}
+}
+
+Frame label="Budzik"{
+Text label="Budzik" icon="sun"{
+Frame label="Na ktora?" {
+Setpoint item=wlgodz minValue=0 maxValue=23 step=1
+Setpoint item=wlmin minValue=0 maxValue=55 step=5
+Switch item=ustawbudzik
+}
+//Frame label="Od czego zaczac?"{
+//Switch item=pobudka1
+//Switch item=pobudka2
+//Switch item=pobudka3
+//}
+}
+}
+
+Frame label="Kontrola glosnosci"{
+Switch item=volup label="Volume up" mappings=[1="+1", 2="+5", 3="+10"]
+Switch item=voldn label="Volume down" mappings=[4="-1", 5="-5", 6="-10"]
+}
+
+Frame label="Scena"{
+Selection item=scena label="Ustawienia sceny" mappings=[1="pawsinoga", 2="pececiarz", 3="spioszek", 4="meloman", 5="telewidz"]
+}
+
+Frame label="Dzien i noc"{
+Switch item=wschod
+Switch item=security
+}
+}
+
+------------------------------RULES-------------------------------------
+
+import org.openhab.core.library.types.*
+import org.openhab.core.persistence.*
+import org.openhab.model.script.actions.*
+import org.openhab.library.tel.types.CallType
+import org.openhab.core.transform.actions.Transformation
+import org.joda.time.*
+import java.lang.Double
+import java.lang.Math.*
+import java.util.Date
+import org.openhab.core.library.types.DecimalType
+import org.openhab.action.squeezebox.*
+import java.util.concurrent.locks.ReentrantLock
+
+//timery
+var Timer timer1 = null
+var Timer timer2 = null
+var Timer timer3 = null
+var Timer timer4 = null
+var Timer timer5 = null
+var Timer timer6 = null
+var Timer timer7 = null
+var Timer timer8 = null
+var Timer timer9 = null
+
+
+rule "Pokaz date i czas"
+when
+Time cron "* * * * * ?"
+then
+postUpdate(dataczas, new DateTimeType())
+end
+
+rule "Poczatek"
+ when
+   System started
+ then
+     postUpdate(wylgodz, 1)
+     postUpdate(wylmin, 0)
+     postUpdate(wlgodz, 8)
+     postUpdate(wlmin, 20)
+ end
+
+rule "wylaczanie"
+when
+Item ustawspanie received command ON
+then
+var int czaswyl
+czaswyl = (wylgodz.state as DecimalType).intValue * 60 + (wylmin.state as DecimalType).intValue
+czaswyl = czaswyl.intValue
+
+//jesli timer juz istnieje to go nadpisz
+if (timer1 != null) {
+timer1.cancel
+timer1 = null
+}
+logInfo("Wylaczanie","Wylaczanie ustawione na za " + czaswyl + " minut")
+
+timer1 = createTimer(now.plusMinutes(czaswyl))[|
+//wyslij komende OFF dla nadajnika IR
+if (spanie1.state==ON){
+sendCommand(pilot1, OFF)
+}
+if (spanie2.state==ON){
+sendCommand(pilot2, OFF)
+}
+if (spanie3.state==ON){
+sendCommand(pilot3, OFF)
+}
+if (spanie4.state==ON){
+sendCommand(d_io_1, OFF)
+}
+
+if (timer4 != null) {
+timer4.cancel
+timer4 = null
+}
+timer4 = createTimer(now.plusSeconds(3))[|
+//po 3 sekundach wlacz scene sen
+sendCommand(scena, 3)
+sendCommand(ustawspanie, OFF)
+]
+//daj update wartosci budzika i wylacznika
+     postUpdate(wylgodz, 1)
+     postUpdate(wylmin, 0)
+     postUpdate(wlgodz, 8)
+     postUpdate(wlmin, 20)
+]
+end
+
+rule "Anuluj wylaczanie"
+when
+Item ustawspanie received command OFF
+then
+if (timer4 != null) {
+timer4.cancel
+timer4 = null
+}
+end
+
+rule "budzik"
+when
+Item ustawbudzik received command ON
+then
+var int czaswl
+czaswl = (wlgodz.state as DecimalType).intValue * 60 + (wlmin.state as DecimalType).intValue
+czaswl = czaswl.intValue
+
+//okresl ile minut jest juz tego dnia
+var int terazczas
+terazczas = now.getMinuteOfDay
+terazczas = terazczas.intValue
+
+var int alarm
+alarm = czaswl - terazczas
+
+//jesli ustawiono na dzien nastepny
+if (alarm <0){
+alarm = alarm + 1440
+}
+logInfo("Pobudka","Pobudka ustawiona na za " + alarm + " minut")
+
+
+//jesli timer juz isnieje to nadpisz
+if (timer2 != null) {
+timer2.cancel
+timer2 = null
+}
+timer2 = createTimer(now.plusMinutes(alarm))[|
+logInfo("Pobudka","Pobudka ustawiona " + alarm + " minut temu")
+//pobudka oznacza tylko wlaczenie radia i ewentualnie swiatla, wiec mozna olac te przyciski
+//if (pobudka1.state==ON){
+sendCommand(scena, 4)
+//}
+//if (pobudka2.state==ON){
+//sendCommand(d_lis_7, ON)
+//}
+//if (pobudka3.state==ON){
+//sendCommand(d_lis_8, ON)
+//}
+
+//jesli timer juz isnieje to nadpisz
+//if (timer3 != null) {
+//timer3.cancel
+//timer3 = null
+//}
+//timer3 = createTimer(now.plusSeconds(3))[|
+
+//po 3 seknudach wlacz z nadajnika IR
+//if (pobudka1.state==ON){
+//sendCommand(pilot1, ON)
+
+//zglosnij o 5 po 2 minutach
+if (timer8 != null) {
+timer8.cancel
+timer8 = null
+}
+timer8 = createTimer(now.plusMinutes(2))[|
+sendCommand(volup, 2)
+]
+
+if (timer9 != null) {
+timer9.cancel
+timer9 = null
+}
+
+//zglosnij o 5 po kolejnych 3 minutach plus wlacz swiatlo jesli jest ciemnica
+timer9 = createTimer(now.plusMinutes(5))[|
+sendCommand(volup, 2)
+if (wschod.state == OFF){
+sendCommand(d_io_1, ON)
+}
+]
+
+//}
+//if (pobudka2.state==ON){
+//sendCommand(pilot2, ON)
+//}
+//if (pobudka3.state==ON){
+//sendCommand(pilot3, ON)
+//}
+
+
+//daj update wartosci budzika i wylacznika
+     postUpdate(wylgodz, 1)
+     postUpdate(wylmin, 0)
+     postUpdate(wlgodz, 8)
+     postUpdate(wlmin, 20)
+     sendCommand(ustawbudzik, OFF)
+]
+end
+
+rule "Anuluj budzik"
+when
+Item ustawbudzik received command OFF
+then
+if (timer2 != null) {
+timer2.cancel
+timer2 = null
+}
+end
+
+rule "volume"
+when
+Item pilotvol received update
+then
+if(pilotvol.state<=10){
+sendCommand(volume, 10)
+}
+if(pilotvol.state>10 &&  pilotvol.state<=20){
+sendCommand(volume, 20)
+}
+if(pilotvol.state>20 &&  pilotvol.state<=30){
+sendCommand(volume, 30)
+}
+if(pilotvol.state>30 &&  pilotvol.state<=40){
+sendCommand(volume, 40)
+}
+if(pilotvol.state>40 &&  pilotvol.state<=50){
+sendCommand(volume, 50)
+}
+if(pilotvol.state>50 &&  pilotvol.state<=60){
+sendCommand(volume, 60)
+}
+if(pilotvol.state>60 &&  pilotvol.state<=70){
+sendCommand(volume, 70)
+}
+if(pilotvol.state>70 &&  pilotvol.state<=80){
+sendCommand(volume, 80)
+}
+if(pilotvol.state>80 &&  pilotvol.state<=90){
+sendCommand(volume, 90)
+}
+if(pilotvol.state>90 &&  pilotvol.state<=100){
+sendCommand(volume, 100)
+}
+
+end
+
+rule "sceny"
+when
+Item scena received update
+then
+
+//scena 1=poza domem, wszystko OFF
+if(scena.state==1){
+logInfo("Scena","Ustawiono scene nr 1 - poza domem")
+sendCommand(pilot1, OFF)
+sendCommand(m_lis_1, OFF)
+sendCommand(m_lis_2, OFF)
+sendCommand(m_lis_3, OFF)
+sendCommand(m_lis_4, OFF)
+sendCommand(m_lis_5, OFF)
+sendCommand(d_lis_1, OFF)
+sendCommand(d_lis_2, OFF)
+sendCommand(d_lis_3, OFF)
+sendCommand(d_lis_4, OFF)
+sendCommand(d_lis_5, OFF)
+sendCommand(d_lis_6, OFF)
+sendCommand(d_lis_7, OFF)
+sendCommand(d_lis_8, OFF)
+sendCommand(d_lis_9, OFF)
+sendCommand(d_lis_10, OFF)
+sendCommand(d_io_1, OFF)
+sendCommand(k_io_1, OFF)
+sendCommand(q_io_1, OFF)
+}
+//scena 2=praca w domu, wszystko OFF poza sprzetami w malym pokoju
+if(scena.state==2){
+logInfo("Scena","Ustawiono scene nr 2 - praca w domu")
+sendCommand(m_lis_1, ON)
+sendCommand(m_lis_2, ON)
+sendCommand(m_lis_3, ON)
+sendCommand(m_lis_4, ON)
+if(wschod.state==OFF){
+sendCommand(m_lis_5, ON)
+}
+sendCommand(d_lis_2, OFF)
+sendCommand(d_lis_3, OFF)
+sendCommand(d_lis_4, OFF)
+sendCommand(d_lis_5, OFF)
+sendCommand(d_lis_7, OFF)
+sendCommand(d_lis_8, OFF)
+sendCommand(d_lis_9, OFF)
+sendCommand(d_lis_10, OFF)
+sendCommand(d_io_1, OFF)
+sendCommand(k_io_1, OFF)
+sendCommand(q_io_1, OFF)
+}
+//scena 3=sen, wszystko OFF poza ladowarka telefonu i PS3
+if(scena.state==3){
+logInfo("Scena","Ustawiono scene nr 3 - sen")
+sendCommand(m_lis_1, OFF)
+sendCommand(m_lis_2, OFF)
+sendCommand(m_lis_3, OFF)
+sendCommand(m_lis_4, OFF)
+sendCommand(m_lis_5, OFF)
+sendCommand(d_lis_1, OFF)
+sendCommand(d_lis_2, OFF)
+sendCommand(d_lis_3, OFF)
+sendCommand(d_lis_4, OFF)
+sendCommand(d_lis_5, ON)
+sendCommand(d_lis_6, OFF)
+sendCommand(d_lis_7, OFF)
+sendCommand(d_lis_9, OFF)
+sendCommand(d_lis_10, OFF)
+sendCommand(d_io_1, OFF)
+sendCommand(k_io_1, OFF)
+sendCommand(q_io_1, OFF)
+}
+//scena 4=radio, wlacz listwe, amp i subwoofer
+if(scena.state==4){
+logInfo("Scena","Ustawiono scene nr 4 - radio")
+sendCommand(d_lis_6, ON)
+sendCommand(d_lis_1, ON)
+//jesli timer juz istnieje to go nadpisz
+if (timer5 != null) {
+timer5.cancel
+timer5 = null
+}
+timer5 = createTimer(now.plusSeconds(3))[|
+sendCommand(pilot1, ON)
+]
+}
+//scena 5=tv, wszystko OFF poza duzym pokojem
+if(scena.state==5){
+logInfo("Scena","Ustawiono scene nr 5 - tv")
+sendCommand(m_lis_1, OFF)
+sendCommand(m_lis_2, OFF)
+sendCommand(m_lis_3, OFF)
+sendCommand(m_lis_4, OFF)
+sendCommand(m_lis_5, OFF)
+sendCommand(d_lis_1, ON)
+sendCommand(d_lis_2, OFF)
+sendCommand(d_lis_3, OFF)
+sendCommand(d_lis_4, OFF)
+sendCommand(d_lis_5, ON)
+sendCommand(d_lis_6, ON)
+sendCommand(d_lis_7, ON)
+sendCommand(d_lis_8, ON)
+sendCommand(d_lis_9, ON)
+sendCommand(d_lis_10, ON)
+if (wschod.state==OFF){
+sendCommand(d_io_1, ON)
+}
+}
+end
+
+rule "Swiatlo w korytarzu"
+when
+Item k_czuj_1 received update
+then
+//jesli ktos sie rusza i jest noc
+if(k_czuj_1.state == 1 && wschod.state == OFF){
+sendCommand(k_io_1, ON)
+//wylacz po 10 sekundach
+if (timer6 != null) {
+timer6.cancel
+timer6 = null
+}
+timer6 = createTimer(now.plusSeconds(3))[|
+sendCommand(k_io_1, OFF)
+]
+}
+end
+
+rule "Zlodziej"
+when
+Item scena received update
+then
+if (scena.state==1){
+if (timer7 != null) {
+timer7.cancel
+timer7 = null
+}
+timer7 = createTimer(now.plusMinutes(2))[|
+
+if(k_czuj_1.state == 1){
+sendCommand(security, ON)
+}
+else{
+(sendCommand(security, OFF)
+}
+]
+}
+end
+
