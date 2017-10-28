@@ -1,2 +1,2 @@
 # SmartHome
-My smart home using OpenHab, Arduino and MQTT
+My Smart Home using OpenHab, Arduino and MQTT
