@@ -1,5 +1,5 @@
 
--------------------ITEMS----------------------
+--------------------ITEMS----------------------
 
 Group All
 
@@ -25,7 +25,7 @@ Switch          m_lis_4         "Glosniki"                                      
 
 Switch          m_lis_5         "Swiatlo"                                       <switch>        (maly_pokoj)    {mqtt=">[broker:lis/m/5:command:off:OFF],>[broker:lis/m/5:command:on:ON],<[broker:m_lis_5/status:state:default]"}
 
-Number          czuj_temp       "Temperatura [%s °C]"                            <temperature>   (duzy_pokoj)    {mqtt="<[broker:czuj/d/1/temp:state:default]"}
+Number          czuj_temp       "Temperatura [%s Â°C]"                            <temperature>   (duzy_pokoj)    {mqtt="<[broker:czuj/d/1/temp:state:default]"}
 
 Number          czuj_wilg       "Wilgotnosc [%s %%]"                            <water>         (duzy_pokoj)    {mqtt="<[broker:czuj/d/1/wilg:state:default]"}
 
@@ -49,7 +49,7 @@ Switch          d_lis_9         "DVB-T"                                         
 
 Switch          d_lis_10        "Antena"                                        <socket>        (duzy_pokoj)    {mqtt=">[broker:lis/d/10:command:off:OFF],>[broker:lis/d/10:command:on:ON],<[broker:d_lis_10/status:state:default]"}
 
-Number          czuj_temp1      "Temperatura [%s °C]"                           <temperature>   (balkon)        {mqtt="<[broker:czuj/b/1/temp:state:default]"}
+Number          czuj_temp1      "Temperatura [%s Â°C]"                           <temperature>   (balkon)        {mqtt="<[broker:czuj/b/1/temp:state:default]"}
 
 Number          czuj_wilg1      "Wilgotnosc [%s %%]"                            <water>         (balkon)        {mqtt="<[broker:czuj/b/1/wilg:state:default]"}
 
